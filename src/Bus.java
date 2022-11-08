@@ -6,12 +6,12 @@ public class Bus extends Transport{
 
     @Override
     public void start() {
-        System.out.println("Завести автобус");
+        System.out.println("Вставить ключ в замок зажигания, и завести двигатель автобуса");
     }
 
     @Override
     public void finish() {
-        System.out.println("Заглушить автобус");
+        System.out.println("Выключить зажигание, вытащить ключ и покинуть автобус");
     }
 }
 

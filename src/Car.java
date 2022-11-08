@@ -6,11 +6,11 @@ public class Car extends Transport{
 
     @Override
     public void start() {
-        System.out.println("Завести машину");
+        System.out.println("Вставить ключ в замок зажигания, запустить двигатель машины");
     }
 
     @Override
     public void finish() {
-        System.out.println("Заглушить машину");
+        System.out.println("Выключить зажигание, заглушить двигатель, вынуть ключ, покинуть машину");
     }
 }

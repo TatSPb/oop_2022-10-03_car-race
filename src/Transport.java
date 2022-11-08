@@ -11,13 +11,14 @@ public abstract class Transport {
         }
 
         if (model == null || model.isEmpty() || model.isBlank()) {
-            this.model = "Укажите бренд";
+            this.model = "Укажите модель";
         } else {
             this.model = model;
         }
 
         if (engineVolume < 0) {
             this.engineVolume = 0;
+            System.out.println("Укажите объем двигателя");
         } else {
             this.engineVolume = engineVolume;
         }
