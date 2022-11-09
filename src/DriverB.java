@@ -1,0 +1,11 @@
+public class DriverB extends Driver<Car>{
+
+    /*** конструкторы
+     * @param FIO
+     * @param typeOfLicense
+     * @param experience
+     * @param typeOfCar***/
+    protected DriverB(String FIO, Character typeOfLicense, int experience, Car typeOfCar) {
+        super(FIO, typeOfLicense, experience, typeOfCar);
+    }
+}
