@@ -25,9 +25,8 @@ public class Main {
         DriverC kiv = new DriverC("Коломенский Илья Васильевич", 'C', 8, kamaz5460);
         DriverD niv = new DriverD("Насонов Игорь Валерьевич", 'D', 10, hyundaiA201);
 
-
-        System.out.println(inp);
-        System.out.println(kiv);
-        System.out.println(niv);
+        inp.driverInfo();
+        kiv.driverInfo();
+        niv.driverInfo();
     }
 }

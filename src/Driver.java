@@ -1,4 +1,4 @@
-public abstract class Driver <T extends Transport & Competing> {
+public abstract class Driver<T extends Transport & Competing> {
 
     private final String FIO;
     private final Character typeOfLicense;
@@ -29,23 +29,25 @@ public abstract class Driver <T extends Transport & Competing> {
     /*** *** ***/
 
     /*** методы ***/
-    public void startMovement(){
+    public void startMovement() {
         System.out.println("Водитель " + FIO + " начинает движение " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
-    };
-    public void stopMovement(){
-        System.out.println("Водитель " + FIO + " останавливает движение " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
-    };
-    public void refuel(){
-        System.out.println("Водитель " + FIO + " заправляет " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
-    };
-
-        @Override
-    public String toString() {
-        return "Водитель " + FIO + " управляет автомобилем " + typeOfCar + " и будет участвовать в заезде.";
     }
 
-/*** *** ***/
+    public void stopMovement() {
+        System.out.println("Водитель " + FIO + " останавливает движение " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
+    }
 
+    public void refuel() {
+        System.out.println("Водитель " + FIO + " заправляет " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
+    }
+
+    public void driverInfo() {
+        System.out.println("Водитель " + getFIO() + " управляет " + typeOfCar.getBrand() + " "+ typeOfCar.getModel() + " " +
+                "и будет участвовать в заезде.");
+    }
+
+
+    /*** *** ***/
 
 
     /*** геттеры и сеттеры ***/
