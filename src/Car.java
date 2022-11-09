@@ -28,4 +28,6 @@ public class Car extends Transport implements Competing{
     public void maxSpeed() {
         System.out.println("Максимальная скорость круга у автомобиля");
     }
+
+
 }

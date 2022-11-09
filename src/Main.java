@@ -1,4 +1,9 @@
 public class Main {
+    @Override
+    public String toString() {
+        return "Main{}";
+    }
+
     public static void main(String[] args) {
 
         Car audiA8 = new Car("Audi", "A8", 3.0);
@@ -16,6 +21,13 @@ public class Main {
         Bus liaz5256 = new Bus ("LIAZ", "5256", 11.15);
         Bus hyundaiA201 = new Bus ("Hyundai", "A201", 13.00);
 
+        DriverB inp = new DriverB("Иванов Николай Петрович", 'B', 5, audiA8);
+        DriverC kiv = new DriverC("Коломенский Илья Васильевич", 'C', 8, kamaz5460);
+        DriverD niv = new DriverD("Насонов Игорь Валерьевич", 'D', 10, hyundaiA201);
 
+
+        System.out.println(inp);
+        System.out.println(kiv);
+        System.out.println(niv);
     }
 }
