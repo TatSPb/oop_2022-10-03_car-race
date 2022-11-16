@@ -1,7 +1,21 @@
 public class Bus extends Transport implements Competing{
+    private TypeOfCapacity typeOfCapacity;
 
-    public Bus(String brand, String model, double engineVolume) {
+    public Bus(String brand,
+               String model,
+               double engineVolume,
+               TypeOfCapacity typeOfCapacity) {
         super(brand, model, engineVolume);
+
+        this.typeOfCapacity = typeOfCapacity;
+    }
+
+    public TypeOfCapacity getTypeOfCapacity() {
+        return typeOfCapacity;
+    }
+
+    public void setTypeOfCapacity(TypeOfCapacity typeOfCapacity) {
+        this.typeOfCapacity = typeOfCapacity;
     }
 
     @Override
@@ -13,7 +27,14 @@ public class Bus extends Transport implements Competing{
     public void finish() {
         System.out.println("Успешный финиш автобуса: двигатель заглушен, ключ из замка зажигания извлечен");
     }
-
+    @Override
+    public void printType() {
+        if (typeOfCapacity ==null) {
+            System.out.println("Данных по автобусу недостаточно");
+        } else {
+            System.out.println("Вместимость автобуса от " + typeOfCapacity.getFrom() + " до " + typeOfCapacity.getTo() + " мест.");
+        }
+    }
     @Override
     public void pitStop() {
         System.out.println("Автобус: произведена техническая остановка, проверено техническое состояние");

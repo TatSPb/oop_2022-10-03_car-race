@@ -24,21 +24,28 @@ public abstract class Transport {
         }
     }
 
-        /** методы **/
-        public abstract void start ();
-        public abstract void finish ();
+    /**
+     * геттеры и сеттеры
+     **/
+    public String getBrand() {
+        return brand;
+    }
 
-        /** геттеры и сеттеры **/
-        public String getBrand () {
-            return brand;
-        }
+    public String getModel() {
+        return model;
+    }
 
-        public String getModel () {
-            return model;
-        }
+    public double getEngineVolume() {
+        return engineVolume;
+    }
 
-        public double getEngineVolume () {
-            return engineVolume;
-        }
 
+    /**
+     * методы
+     **/
+    public abstract void start();
+
+    public abstract void finish();
+
+    public abstract void printType();
 }

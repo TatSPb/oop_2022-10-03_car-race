@@ -1,7 +1,21 @@
 public class Truck extends Transport implements Competing {
 
-    public Truck(String brand, String model, double engineVolume) {
+    private TypeOfWeight typeOfWeight;
+
+    public Truck(String brand,
+                 String model,
+                 double engineVolume,
+                 TypeOfWeight typeOfWeight) {
         super(brand, model, engineVolume);
+        this.typeOfWeight = typeOfWeight;
+    }
+
+    public TypeOfWeight getTypeOfWeight() {
+        return typeOfWeight;
+    }
+
+    public void setTypeOfWeight(TypeOfWeight typeOfWeight) {
+        this.typeOfWeight = typeOfWeight;
     }
 
     @Override
@@ -13,7 +27,16 @@ public class Truck extends Transport implements Competing {
     public void finish() {
         System.out.println("Успешный финиш грузовика: двигатель заглушен, ключ из замка зажигания извлечен");
     }
-
+    @Override
+    public void printType() {
+        if (typeOfWeight ==null) {
+            System.out.println("Данных по грузовику недостаточно");
+        } else {
+            String from = typeOfWeight.getFrom() == null ? "" : "от " + typeOfWeight.getFrom() + " ";
+            String to = typeOfWeight.getTo() == null ? "" : "до " + typeOfWeight.getTo();
+            System.out.println("Грузоподъёмность грузовика " + from + to + " тонн.");
+        }
+    }
 
     @Override
     public void pitStop() {

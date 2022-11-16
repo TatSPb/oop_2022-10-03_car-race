@@ -1,4 +1,4 @@
-public class DriverB extends Driver<Car>{
+public class  DriverB extends Driver<Car>{
 
     /*** конструкторы
      * @param FIO
