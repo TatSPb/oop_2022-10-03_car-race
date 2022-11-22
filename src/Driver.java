@@ -1,12 +1,10 @@
 public abstract class Driver<T extends Transport & Competing> {
 
     private final String FIO;
-    private final Character typeOfLicense;
+    private Character typeOfLicense;
     private int experience;
     private T typeOfCar;
 
-
-    /*** конструкторы ***/
     protected Driver(String FIO, Character typeOfLicense, int experience, T typeOfCar) {
         if (FIO == null || FIO.isEmpty()) {
             throw new NullPointerException("Укажите ФИО водителя");
@@ -14,21 +12,14 @@ public abstract class Driver<T extends Transport & Competing> {
             this.FIO = FIO;
         }
 
-        if (typeOfLicense != 'D' && typeOfLicense != 'B' && typeOfLicense != 'C' & typeOfLicense != '0') {
-            throw new NullPointerException("Отсутствует право управления а/м");
-        } else {
-            this.typeOfLicense = typeOfLicense;
-        }
-
         if (typeOfCar != null) {
             this.typeOfCar = typeOfCar;
         }
 
         setExperience(experience);
+        setTypeOfLicense(typeOfLicense);
     }
-    /*** *** ***/
 
-    /*** методы ***/
     public void startMovement() {
         System.out.println("Водитель " + FIO + " начинает движение " + typeOfCar.getBrand() + " " + typeOfCar.getModel());
     }
@@ -42,15 +33,10 @@ public abstract class Driver<T extends Transport & Competing> {
     }
 
     public void driverInfo() {
-        System.out.println("Водитель " + getFIO() + " управляет " + typeOfCar.getBrand() + " "+ typeOfCar.getModel() + " " +
+        System.out.println("Водитель " + getFIO() + " управляет " + typeOfCar.getBrand() + " " + typeOfCar.getModel() + " " +
                 "и будет участвовать в заезде.");
     }
 
-
-    /*** *** ***/
-
-
-    /*** геттеры и сеттеры ***/
     public String getFIO() {
         return FIO;
     }
@@ -78,6 +64,13 @@ public abstract class Driver<T extends Transport & Competing> {
     public void setTypeOfCar(T typeOfCar) {
         this.typeOfCar = typeOfCar;
     }
-/*** *** ***/
+
+    public void setTypeOfLicense(Character typeOfLicense) {
+        if (typeOfLicense != 'D' && typeOfLicense != 'B' && typeOfLicense != 'C' & typeOfLicense != '0') {
+            throw new IllegalArgumentException("Необходимо указать категорию прав!");
+        } else {
+            this.typeOfLicense = typeOfLicense;
+        }
+    }
 
 }

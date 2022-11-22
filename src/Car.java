@@ -53,5 +53,8 @@ public class Car extends Transport implements Competing{
         System.out.println("Максимальная скорость круга для автомобиля");
     }
 
-
+    @Override
+    public boolean service() {
+        return Math.random() > 0.7;
+    }
 }

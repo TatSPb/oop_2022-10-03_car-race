@@ -49,6 +49,13 @@ public class Bus extends Transport implements Competing{
     public void maxSpeed() {
         System.out.println("Максимальная скорость круга у автобуса");
     }
+
+    @Override
+    public boolean service() {
+
+        System.out.println("Автобус " +getBrand() + " " + getModel() + " в диагностике не требуется");
+        return true;
+    }
 }
 
 

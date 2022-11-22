@@ -52,4 +52,9 @@ public class Truck extends Transport implements Competing {
     public void maxSpeed() {
         System.out.println("Максимальная скорость круга у грузовика");
     }
+
+    @Override
+    public boolean service() {
+        return Math.random() > 0.75;
+    }
 }
