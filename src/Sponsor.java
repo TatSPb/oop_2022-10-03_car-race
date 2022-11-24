@@ -21,6 +21,6 @@ public class Sponsor {
 
     @Override
     public String toString() {
-        return name  + ", сумма поддержки: " + amount;
+        return name  + " c суммой поддержки " + amount + " руб";
     }
 }

@@ -75,7 +75,6 @@ public abstract class Driver<T extends Transport & Competing> {
 
     @Override
     public String toString() {
-        return FIO + ", стаж вождения: " + experience + ", категория прав: " + typeOfLicense +
-                ", стаж вождения" + typeOfCar;
+        return FIO + ", стаж вождения: " + experience + ", категория прав: " + typeOfLicense;
     }
 }

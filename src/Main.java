@@ -49,7 +49,6 @@ public class Main {
         hyundaiA201.addSponsors(vodafone, puma);
 
 
-
 //        printInfo(inp, opelAstra);
 //        printInfo(kiv, kamaz5460);
 //        printInfo(niv, liaz5256);
@@ -62,10 +61,10 @@ public class Main {
 //        );
 
 
-        List<Transport> transports = List.of(audiA8,  kamaz5460, hyundaiA201);
+        List<Transport> transports = List.of(audiA8, kamaz5460, hyundaiA201);
 
-        for (Transport transport : transports){
-                printInfo2(transport);
+        for (Transport transport : transports) {
+            printInfo3(transport);
         }
     }
 
@@ -91,23 +90,31 @@ public class Main {
                 throw new RuntimeException("Автомобиль " + transport.getBrand() + " "
                         + transport.getModel() + " не прошел диагностику");
             }
-        }catch(RuntimeException e){
-                System.out.println(e.getMessage());
-            }
-        }
-
-        private static void printInfo2 (Transport transport){
-            System.out.println("Транспортное средство: " + transport.getBrand() + " " + transport.getModel());
-            for (Driver<?> driver : transport.getDrivers()){
-                System.out.println("Водители: " + driver.getFIO());
-            }
-            for (Sponsor sponsor : transport.getSponsors()){
-                System.out.println("Спонсоры: " + sponsor.getName());
-            }
-            for (Mechanic<?> mechanic : transport.getMechanics()){
-                System.out.println("Механики: " + mechanic.getName() + " " + mechanic.getSurname() + " из компании " + mechanic.getCompany());
-            }
-
-
+        } catch (RuntimeException e) {
+            System.out.println(e.getMessage());
         }
     }
+
+//        private static void printInfo2 (Transport transport){
+//            System.out.println("Транспортное средство: " + transport.getBrand() + " " + transport.getModel());
+//            for (Driver<?> driver : transport.getDrivers()){
+//                System.out.println("Водители: " + driver.getFio());
+//            }
+//            for (Sponsor sponsor : transport.getSponsors()){
+//                System.out.println("Спонсоры: " + sponsor.getName());
+//            }
+//            for (Mechanic<?> mechanic : transport.getMechanics()){
+//                System.out.println("Механики: " + mechanic.getName() + " " + mechanic.getSurname() + " из компании " + mechanic.getCompany());
+//            }
+//        }
+
+    private static void printInfo3(Transport transport) {
+        System.out.println("Информация по автомобилю " + transport.getBrand() + " " + transport.getModel());
+        System.out.println("Водители: " + transport.getDrivers());
+        System.out.println("Спонсоры: " + transport.getSponsors());
+        System.out.println("Механики: " + transport.getMechanics());
+        System.out.println();
+    }
+}
+
+

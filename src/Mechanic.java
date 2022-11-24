@@ -30,4 +30,9 @@ public class Mechanic <T extends Transport>{
     public void repair(T t) {
         t.repair();
     }
+
+    @Override
+    public String toString() {
+        return name + " " + surname  + " из компании " + company;
+    }
 }
