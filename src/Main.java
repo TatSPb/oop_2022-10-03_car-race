@@ -49,24 +49,22 @@ public class Main {
         hyundaiA201.addSponsors(vodafone, puma);
 
 
-//        printInfo(inp, opelAstra);
-//        printInfo(kiv, kamaz5460);
-//        printInfo(niv, liaz5256);
-
-//        System.out.println("\nДанные по диагностике:" );
-//        service(
-//                audiA8, scodaFabia, fiat500C, opelAstra,
-//                volvoFh16, kamaz5460, manTgs, belaz10,
-//                nefaz5299, paz3205, liaz5256, hyundaiA201
-//        );
-
-
         List<Transport> transports = List.of(audiA8, kamaz5460, hyundaiA201);
+
+        ServiceStation serviceStation = new ServiceStation();
+        serviceStation.addCar (audiA8);
+        serviceStation.addTruck(kamaz5460);
+        serviceStation.service();
+        serviceStation.service();
+        System.out.println();
+
 
         for (Transport transport : transports) {
             printInfo3(transport);
         }
     }
+
+
 
     private static void printInfo(Driver<?> driver, Transport transport) {
         System.out.println(
@@ -95,18 +93,7 @@ public class Main {
         }
     }
 
-//        private static void printInfo2 (Transport transport){
-//            System.out.println("Транспортное средство: " + transport.getBrand() + " " + transport.getModel());
-//            for (Driver<?> driver : transport.getDrivers()){
-//                System.out.println("Водители: " + driver.getFio());
-//            }
-//            for (Sponsor sponsor : transport.getSponsors()){
-//                System.out.println("Спонсоры: " + sponsor.getName());
-//            }
-//            for (Mechanic<?> mechanic : transport.getMechanics()){
-//                System.out.println("Механики: " + mechanic.getName() + " " + mechanic.getSurname() + " из компании " + mechanic.getCompany());
-//            }
-//        }
+
 
     private static void printInfo3(Transport transport) {
         System.out.println("Информация по автомобилю " + transport.getBrand() + " " + transport.getModel());
@@ -115,6 +102,8 @@ public class Main {
         System.out.println("Механики: " + transport.getMechanics());
         System.out.println();
     }
+
+
 }
 
 
